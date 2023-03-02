@@ -10,8 +10,7 @@ FROM rust:1.55-slim-buster AS build
 
 WORKDIR /hexit
 RUN apt-get update && apt-get install -y git \
- && git clone https://github.com/ogham/hexit.git --depth 1 . \
- && git reset --hard 8db393291503445ebf6fa71af856183da9704c3e
+ && git clone https://github.com/ogham/hexit.git --depth 1 .
 
 RUN cargo build --release
 # Once Hexit gets a stable release, we should just be able to download a
